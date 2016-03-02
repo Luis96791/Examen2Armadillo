@@ -15,13 +15,39 @@ using namespace std;
 //Nota: Se deben poder agregar varios gatos en un solo archivo
 void escribir(string nombre_archivo, Gato*gato, int posicion)
 {
+    ofstream out(nombre_archivo.c_str(), ios::in);
+    if(!out.is_open()){
+        out.open(nombre_archivo.c_str());
+    }
+    out.seekp(posicion);
+    out.write(gato->nombre.c_str(), 20);
+    out.write(gato->raza.c_str(), 20);
+    out.write((char*)&gato->sexo, 4);
+    out.write((char*)&gato->edad, 4);
+
+    out.close();
 }
 
 //Devuelve un gato previamente escrito (con la funcion escribir()) en un archivo binario con nombre dado en la posicion dada
 //Nota: Se deben poder leer varios gatos de un solo archivo
 Gato* leer(string nombre_archivo, int posicion)
 {
-    Gato *gato = new Gato(0,' ',"","");
+    ifstream in(nombre_archivo.c_str());
+    in.seekg(posicion);
+
+    char nombre[20];
+    char raza[20];
+    char sexo;
+    char edad;
+
+    in.read((char*)&nombre, 20);
+    in.read((char*)&raza, 20);
+    in.read((char*)&sexo, 4);
+    in.read((char*)&edad, 4);
+
+    in.close();
+
+    Gato *gato = new Gato(edad,sexo,raza,nombre);
     return gato;
 }
 

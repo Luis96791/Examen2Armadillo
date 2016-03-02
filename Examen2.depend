@@ -173,3 +173,27 @@
 
 1443059997 /home/turupawn/armadillo/Examen2Tiburon-master/NodoTrinario.h
 
+1456939671 source:/home/luis/Escritorio/GitHub/Examen2Armadillo/Evaluador.cpp
+	"Evaluador.h"
+
+1456939671 /home/luis/Escritorio/GitHub/Examen2Armadillo/Evaluador.h
+	"Gato.h"
+	"NodoTrinario.h"
+	<iostream>
+	<stack>
+	<queue>
+	<set>
+	<map>
+	<list>
+
+1456939671 /home/luis/Escritorio/GitHub/Examen2Armadillo/Gato.h
+	<iostream>
+
+1456939671 /home/luis/Escritorio/GitHub/Examen2Armadillo/NodoTrinario.h
+
+1456939671 source:/home/luis/Escritorio/GitHub/Examen2Armadillo/Gato.cpp
+	"Gato.h"
+
+1456939671 source:/home/luis/Escritorio/GitHub/Examen2Armadillo/NodoTrinario.cpp
+	"NodoTrinario.h"
+
