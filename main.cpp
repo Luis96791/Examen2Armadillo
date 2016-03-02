@@ -19,12 +19,11 @@ void escribir(string nombre_archivo, Gato*gato, int posicion)
     if(!out.is_open()){
         out.open(nombre_archivo.c_str());
     }
-    out.seekp(posicion);
-    out.write(gato->nombre.c_str(), 20);
-    out.write(gato->raza.c_str(), 20);
-    out.write((char*)&gato->sexo, 4);
-    out.write((char*)&gato->edad, 4);
-
+    out.seekp(posicion*45);
+    out.write((char*)&gato->edad,4);
+    out.write((char*)gato->nombre.c_str(),20);
+    out.write((char*)gato->raza.c_str(),20);
+    out.write((char*)&gato->sexo,1);
     out.close();
 }
 
@@ -35,19 +34,16 @@ Gato* leer(string nombre_archivo, int posicion)
     ifstream in(nombre_archivo.c_str());
     in.seekg(posicion);
 
+    in.seekg(posicion*45);
+    int edad;
     char nombre[20];
     char raza[20];
     char sexo;
-    char edad;
-
-    in.read((char*)&nombre, 20);
-    in.read((char*)&raza, 20);
-    in.read((char*)&sexo, 4);
-    in.read((char*)&edad, 4);
-
-    in.close();
-
-    Gato *gato = new Gato(edad,sexo,raza,nombre);
+    in.read((char*)&edad,4);
+    in.read((char*)nombre,20);
+    in.read((char*)raza,20);
+    in.read((char*)&sexo,1);
+    Gato *gato = new Gato(edad,sexo,nombre,raza);
     return gato;
 }
 
@@ -60,6 +56,7 @@ double getPromedioDeEdad(string nombre_archivo)
 //Devuelve el numero mayor almacenado en mi_set (dado)
 int getMayor(set<int> mi_set)
 {
+    for()
     return -1;
 }
 
