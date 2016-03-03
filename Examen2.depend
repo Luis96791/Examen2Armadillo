@@ -197,3 +197,39 @@
 1456939671 source:/home/luis/Escritorio/GitHub/Examen2Armadillo/NodoTrinario.cpp
 	"NodoTrinario.h"
 
+1456964223 source:c:\users\luis\documents\github\examen2armadillo\evaluador.cpp
+	"Evaluador.h"
+
+1456964223 c:\users\luis\documents\github\examen2armadillo\evaluador.h
+	"Gato.h"
+	"NodoTrinario.h"
+	<iostream>
+	<stack>
+	<queue>
+	<set>
+	<map>
+	<list>
+
+1456964223 c:\users\luis\documents\github\examen2armadillo\gato.h
+	<iostream>
+
+1456964223 c:\users\luis\documents\github\examen2armadillo\nodotrinario.h
+
+1456964223 source:c:\users\luis\documents\github\examen2armadillo\gato.cpp
+	"Gato.h"
+
+1456970491 source:c:\users\luis\documents\github\examen2armadillo\main.cpp
+	<iostream>
+	<list>
+	<fstream>
+	<stack>
+	<queue>
+	<set>
+	<map>
+	"Gato.h"
+	"Evaluador.h"
+	"NodoTrinario.h"
+
+1456964223 source:c:\users\luis\documents\github\examen2armadillo\nodotrinario.cpp
+	"NodoTrinario.h"
+

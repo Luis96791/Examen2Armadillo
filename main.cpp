@@ -50,20 +50,52 @@ Gato* leer(string nombre_archivo, int posicion)
 //Devuelve el promedio de la edad de todos los gatos guardados en el archivo con nombre dado
 double getPromedioDeEdad(string nombre_archivo)
 {
-    return -1;
+    double cant_gatos=0, acum = 0;
+
+    ifstream in(nombre_archivo.c_str());
+    in.seekg(0,ios::end);
+    cant_gatos = in.tellg()/45;
+
+    for(int i =0; i <cant_gatos; i++){
+        acum +=leer(nombre_archivo, i)->edad;
+    }
+    return acum/cant_gatos;
 }
 
 //Devuelve el numero mayor almacenado en mi_set (dado)
 int getMayor(set<int> mi_set)
 {
-    for()
-    return -1;
+    int mayor = 0;
+    for(set<int>::iterator temp = mi_set.begin(); temp != mi_set.end(); temp++){
+        if(*temp > mayor){
+            mayor = *temp;
+        }
+    }
+    return mayor;
 }
 
 //Mezcla el contenido de a y b (dados) y lo devuelve en un set ordenado alfabeticamente
 set<char> mezclarAlfabeticamente(queue<char> a, stack<char> b)
 {
     set<char> resultado;
+
+    int size_a = a.size();
+    int ac1=0;
+
+    while(ac1 != size_a){
+        resultado.insert(a.front());
+        a.pop();
+        ac1++;
+    }
+
+    int size_b = b.size();
+    int ac2=0;
+
+    while(ac2 != size_b){
+        resultado.insert(b.top());
+        b.pop();
+        ac2++;
+    }
     return resultado;
 }
 
@@ -83,11 +115,14 @@ int getMayor(NodoTrinario* raiz)
 //Busca y reemplaza dado los valores buscado y reemplazo en el arbol con raiz dada
 void buscarYReemplazar(NodoTrinario* raiz,int buscado, int reemplazo)
 {
+
 }
 
-char retener3Bits(char byte)
+char retener3Bits(char bytes)
 {
-    return 0;
+    char retener = 7;
+    char acumular = bytes&retener;
+    return acumular;
 }
 
 int main ()
